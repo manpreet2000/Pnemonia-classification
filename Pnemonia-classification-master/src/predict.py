@@ -21,19 +21,6 @@ class pnemonia_class:
     def predictpnemonia(self):
         # load model
 
-        '''
-        base_model=tf.keras.applications.densenet.DenseNet121(include_top=False)
-        x=base_model.output
-        x=tf.keras.layers.GlobalAveragePooling2D()(x)
-
-        x=tf.keras.layers.Dropout(0.5)(x)
-
-        pred=tf.keras.layers.Dense(1,activation='sigmoid')(x)
-        model = tf.keras.models.Model(inputs=base_model.input, outputs=pred)
-
-        model.load_weights("./weights/my_model_weights.h5")
-        '''
-
         model = models.Sequential()
         model.add(layers.Conv2D(32, (3, 3), activation='relu',input_shape=(150, 150, 3)))
         model.add(layers.MaxPooling2D((2, 2)))
